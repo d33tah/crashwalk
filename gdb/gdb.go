@@ -416,6 +416,7 @@ func (e *Engine) Run(command []string, filename string, memlimit, timeout int) (
 	}
 
 	cmd = exec.Command("gdb", args...)
+	fmt.Printf("%v\n", args)
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
 		return crash.Info{}, fmt.Errorf("error creating stdout pipe: %s", err)
